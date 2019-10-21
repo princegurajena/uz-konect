@@ -12,7 +12,7 @@ class RestaurantController extends Controller
 {
     public function index(RestaurantFilter $filter)
     {
-        $restaurants = Restaurant::filter($filter , [])->paginate(30);
+        $restaurants = Restaurant::filter($filter , [])->with(['contact'])->get();
         return  api()
                 ->data('restaurants' , $restaurants )
                 ->build();

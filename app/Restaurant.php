@@ -11,4 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 class Restaurant extends Model
 {
     use HasModelFilter;
+    public function contact()
+    {
+        return $this->morphOne(ContactDetail::class,'contact_details');
+    }
 }
