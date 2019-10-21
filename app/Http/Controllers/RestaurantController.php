@@ -23,7 +23,7 @@ class RestaurantController extends Controller
     {
         $menus = Menu::filter($filter , [
             'restaurant_id' => $restaurant->id
-        ])->paginate(30);
+        ])->get();
 
         return  api()
             ->data('menus' , $menus )
