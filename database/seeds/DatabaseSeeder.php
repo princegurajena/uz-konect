@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         // User
         $user  =  factory(User::class)->create();
 
-        $restaurants = factory(Restaurant::class , 40 )->create();
+        $restaurants = factory(Restaurant::class , 5 )->create();
 
         /** @var Restaurant $restaurant */
         foreach ($restaurants as $restaurant)
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
                 'contact_details_type' => Restaurant::class
             ]);
 
-            factory(Menu::class , 6)->create([
+            factory(Menu::class , 5)->create([
                'restaurant_id' => $restaurant->id
             ]);
         }

@@ -34,7 +34,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
     return [
         'name' => $faker->streetName,
         'description' => $faker->sentence,
-        'short_name' => 'PG'
+        'short_name' => strtoupper($faker->randomLetter . $faker->randomLetter)
     ];
 });
 $factory->define(Menu::class, function (Faker $faker) {
