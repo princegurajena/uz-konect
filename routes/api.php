@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/restaurants/list' , [RestaurantController::class , 'index'] );
 Route::get('/restaurants/{restaurants}/menu' , [RestaurantController::class , 'menu'] );
-Route::get('/menu/{menu}/view' , [MenuController::class] );
+Route::get('/menu/{menu}/view' , [MenuController::class , 'view'] );
