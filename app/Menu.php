@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Menu extends Model
 {
     use HasModelFilter;
+    public function restaurant(){
+       return $this->hasOne(Restaurant::class , 'id' , 'restaurant_id');
+    }
 }

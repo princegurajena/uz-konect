@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RestaurantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/restaurants/list' , [RestaurantController::class , 'index'] );
 Route::get('/restaurants/{restaurants}/menu' , [RestaurantController::class , 'menu'] );
+Route::get('/menu/{menu}/view' , [MenuController::class] );
